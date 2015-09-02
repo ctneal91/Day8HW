@@ -26,4 +26,14 @@ movies << {
   stars: ["Leonardo DiCaprio", "JGL"]
 }
 
-print movies
+step1 = movies.select{ |h| h[:budget] > 100}
+              .map{|h| h[:title]}
+puts "1. The movies with budgets greater than $100 million are:"
+puts step1
+step2 = movies.select{ |h| h[:stars].include?('Leonardo DiCaprio')}
+              .map{|h| h[:title]}
+
+puts
+
+puts "2. The movies starring Leonardo DiCaprio are:"
+puts step2
